@@ -103,7 +103,7 @@ pipeline {
 
 --- 
 
-## ▶️ ¿Cómo ejecutar esta pipeline?
+## ▶️ ¿Cómo ejecutar esta Pipeline?
 1. Asegúrate de que Jenkins tenga acceso a Docker:
   - Usa una imagen de Jenkins con Docker in Docker.
   - O comparte el socket Docker -v /var/run/docker.sock:/var/run/docker.sock`.
