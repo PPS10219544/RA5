@@ -64,6 +64,8 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
+---
+
 ### ▶️ Ejecución de las pruebas
 
 ```bash
@@ -71,7 +73,7 @@ python calculadora.py 14 5
 ```
 ![Prueba_calculadora](assets/Prueba_calculadora.png) 
 
-
+ 
 ```bash
 python test_calculator.py
 ```
