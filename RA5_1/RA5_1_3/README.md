@@ -103,6 +103,21 @@ pipeline {
 
 --- 
 
+## ▶️ ¿Cómo ejecutar esta pipeline?
+1. Asegúrate de que Jenkins tenga acceso a Docker:
+  - Usa una imagen de Jenkins con Docker in Docker.
+  - O comparte el socket Docker (-v /var/run/docker.sock:/var/run/docker.sock) como en este ejemplo.
+
+2. Crea un nuevo proyecto en Jenkins:
+  - Tipo: Pipeline
+  - Pipeline from SCM
+    - Repository URL: https://github.com/PPS10219544/RA5_1.git
+    - Script Path: RA5_1_3/jenkinsfile.docker
+
+3. Guarda y haz clic en “Build Now”.
+
+--- 
+
 ## 📚 Recursos
 
 - [Jenkins con Docker](https://www.jenkins.io/doc/book/pipeline/docker/)
