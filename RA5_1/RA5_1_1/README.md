@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
 ---
 
-### 🧪 Pruebas unitarias [calculadora.py](/test_calculator.py)
+### 🧪 Pruebas unitarias [test_calculator.py](/test_calculator.py)
 
 ```python
 import unittest
