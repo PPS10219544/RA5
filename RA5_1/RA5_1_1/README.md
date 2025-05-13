@@ -13,7 +13,7 @@ Esta tarea consiste en desarrollar una pequeña aplicación en Python que reciba
 
 ---
 
-### 📌 Contenido de [calculadora.py](/calculadora.py)
+### 📌 Contenido de [calculadora.py](calculadora.py)
 
 ```python
 class Calculadora:
