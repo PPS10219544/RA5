@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    triggers {
+        pollSCM('* * * * *')
+    }
+
+    stages {
+        stage('Preparar entorno') {
+            steps {
+                echo 'Entorno listo para las pruebas.'
+            }
+        }
+
+        stage('Pruebas Unitarias') {
+            steps {
+                sh 'PYTHONPATH=RA5_1/RA5_1_1/ python3 -m unittest test_calculator.py'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline ejecutada correctamente.'
+        }
+        failure {
+            echo 'La pipeline ha fallado. Debes revisar los errores encontrados.'
+        }
+    }
+}
