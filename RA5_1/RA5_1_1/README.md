@@ -78,3 +78,10 @@ python calculadora.py 14 5
 python test_calculator.py
 ```
 ![Prueba_test-unitario](assets/Prueba_test-unitario.png) 
+
+---
+
+## 📎 Recursos
+
+- [unittest (Python docs)](https://docs.python.org/library/unittest.html)
+- [Clases en Python (W3Schools)](https://www.w3schools.com/python/python_classes.asp)
