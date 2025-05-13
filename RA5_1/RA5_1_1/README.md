@@ -15,10 +15,6 @@ Esta tarea consiste en desarrollar una pequeña aplicación en Python que reciba
 
 ### 📌 Contenido de `calculadora.py`
 
-Este archivo contiene dos partes:
-
-#### 1. Clase `Calculadora`
-
 ```python
 class Calculadora:
     def multiplicar(self, a, b):
@@ -41,4 +37,41 @@ if __name__ == "__main__":
     calc = Calculadora()
     resultado = calc.multiplicar(num1, num2)
     print(f"Resultado: {resultado}")
+```
 
+---
+
+### 🧪 Pruebas unitarias `test_calculator.py`
+
+```python
+import unittest
+from calculadora import Calculadora
+
+class TestCalculadora(unittest.TestCase):
+    def setUp(self):
+        self.calc = Calculadora()
+
+    def test_multiplicar_enteros(self):
+        self.assertEqual(self.calc.multiplicar(3, 4), 12)
+
+    def test_multiplicar_flotantes(self):
+        self.assertAlmostEqual(self.calc.multiplicar(2.5, 4.0), 10.0)
+
+    def test_multiplicar_por_cero(self):
+        self.assertEqual(self.calc.multiplicar(0, 100), 0)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+### ▶️ Ejecución de las pruebas
+
+```bash
+python calculadora.py 4 5
+```
+
+
+
+```bash
+python test_calculator.py
+```
