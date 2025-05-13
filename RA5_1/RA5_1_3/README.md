@@ -26,6 +26,8 @@ CMD ["python3", "-m", "unittest", "RA5_1_1/test_calculator.py"]
 
 ## 🐳 docker-compose.yml
 
+Dine el servicio de prueba:
+
 ```dockerfile
 version: '3.8'
 
@@ -38,6 +40,8 @@ services:
 ---
 
 ## ⚙️ jenkinsfile.docker
+
+Archivo de pipeline con todas las etapas:
 
 ```dockerfile
 pipeline {
