@@ -81,7 +81,8 @@ python test_calculator.py
 
 ---
 
-## 📎 Recursos
+## 📚 Recursos
 
+- [Guía oficial](https://psegarrac.github.io/Ciberseguridad-PePS/tema5/cd/ci/2022/01/13/jenkins.html#tareas)
 - [unittest (Python docs)](https://docs.python.org/library/unittest.html)
 - [Clases en Python (W3Schools)](https://www.w3schools.com/python/python_classes.asp)
