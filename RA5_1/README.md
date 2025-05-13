@@ -4,7 +4,7 @@
 
 **Jenkins** es una herramienta de automatización de código abierto utilizada para implementar prácticas de **Integración Continua (CI)** y **Entrega/Despliegue Continuos (CD)**. Permite automatizar la construcción, prueba y despliegue de software, acelerando el ciclo de desarrollo y reduciendo errores humanos.
 
-En este repositorio se documenta la implementación, configuración y análisis de Jenkins, una herramienta de automatización utilizada en entornos DevOps para integrar y desplegar software de manera continua (CI/CD). Se trabajará con la creación de pipelines tanto en entornos Java como Python, configurando las distintas etapas necesarias (checkout, compilación, testing, análisis de calidad de código) y gestionando su ejecución mediante archivos `Jenkinsfile`. Además, se evaluará el uso de Jenkins en combinación con herramientas como JaCoCo y Checkstyle, documentando el proceso de construcción, detección de errores y control de calidad en proyectos reales.
+En este repositorio se documenta paso a paso la instalación, configuración y uso práctico de Jenkins, enfocándose en la implementación de pipelines en proyectos desarrollados en Python y Java. Se trabaja con el concepto de Pipeline as Code mediante archivos `Jenkinsfile`, configurando las distintas etapas necesarias (checkout, compilación, testing, análisis de calidad de código)
 
 ---
 
