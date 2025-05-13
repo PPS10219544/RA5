@@ -1,4 +1,5 @@
-# 🧩 RA5_1_1 - Desarrollo de una Calculadora de Multiplicación en Python
+# 🧩 RA5_1_1
+Desarrollo de una Calculadora de Multiplicación en Python
 
 ## 🎯 Objetivo
 
