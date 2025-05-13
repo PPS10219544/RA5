@@ -50,17 +50,6 @@ pipeline {
 ```
 
 ---
-
-### ▶️ Ejecución de las pruebas
-
-
-```bash
-python calculadora.py 14 5
-python -m unittest test_calculator.py
-```
-![Prueba_Jenkinsfile](assets/Prueba_Jenkinsfile.png) 
-
----
  
 ### 📚 Recursos
 
