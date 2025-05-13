@@ -67,11 +67,12 @@ if __name__ == '__main__':
 ### ▶️ Ejecución de las pruebas
 
 ```bash
-python calculadora.py 4 5
+python calculadora.py 14 5
 ```
-
+![Prueba_calculadora](assets/Prueba_calculadora.png) 
 
 
 ```bash
 python test_calculator.py
 ```
+![Prueba_test-unitario](assets/Prueba_test-unitario.png) 
