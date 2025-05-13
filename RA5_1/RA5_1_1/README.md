@@ -13,7 +13,7 @@ Esta tarea consiste en desarrollar una pequeña aplicación en Python que reciba
 
 ---
 
-### 📌 Contenido de [calculadora.py](RA5_1_1/calculadora.py)
+### 📌 Contenido de [calculadora.py](/calculadora.py)
 
 ```python
 class Calculadora:
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
 ---
 
-### 🧪 Pruebas unitarias `test_calculator.py`
+### 🧪 Pruebas unitarias [calculadora.py](/test_calculator.py)
 
 ```python
 import unittest
