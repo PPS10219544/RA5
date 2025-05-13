@@ -1,26 +1,21 @@
 # 📁 RA5
 
-Exploración de diversos aspectos clave de la **seguridad informática**, centrados en el endurecimiento de servidores, seguridad en aplicaciones web, y análisis mediante herramientas como **DVWA** y **Burp Suite**.
+Implantación de sistemas seguros de despliegue de software, utilizando herramientas para la
+automatización de la construcción de sus elementos.
+
 
 Incluye los siguientes apartados:
-* [RA5_1](RA5/RA5_1): Jenkings.
+* [RA5_1](RA5/RA5_1): Jenkins.
 * [RA5_2](RA5/RA5_2): Terraform & Ansible.
 
 ```
 .
 ├── RA3
-│   ├── RA3_1
+│   ├── RA5_1
 │   │   ├── asset
 │   │   └── README.md
-│   ├── RA3_2
+│   ├── RA5_2
 │   │   ├── asset
 │   │   └── README.md
-│   ├── RA3_3
-│   │   ├── asset
-│   │   └── README.md
-│   └── RA3_4
-│       ├── asset
-│       └── README.md
 └── README.md
-
 ```
