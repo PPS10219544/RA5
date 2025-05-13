@@ -1,19 +1,19 @@
-## 🧩 RA5_1_1 - Desarrollo de una Calculadora de Multiplicación en Python
+# 🧩 RA5_1_1 - Desarrollo de una Calculadora de Multiplicación en Python
 
-### 🎯 Objetivo
+## 🎯 Objetivo
 
 Esta tarea consiste en desarrollar una pequeña aplicación en Python que reciba **dos números desde la línea de comandos** y devuelva el resultado de su multiplicación. Además, se implementarán **pruebas unitarias** con la biblioteca `unittest` para garantizar la correcta funcionalidad del método de multiplicación. Finalmente, se publicará el proyecto en GitHub.
 
 ---
 
-### 📁 Archivos requeridos
+## 📁 Archivos requeridos
 
 - `calculadora.py`: contiene la clase principal `Calculadora` y la lógica para recibir argumentos desde la línea de comandos.
 - `test_calculator.py`: contiene las pruebas unitarias que validan la operación de multiplicación.
 
 ---
 
-### 📌 Contenido de [calculadora.py](calculadora.py)
+## 📌 Contenido de [calculadora.py](calculadora.py)
 
 ```python
 class Calculadora:
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
 ---
 
-### 🧪 Pruebas unitarias [test_calculator.py](test_calculator.py)
+## 🧪 Pruebas unitarias [test_calculator.py](test_calculator.py)
 
 ```python
 import unittest
@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
 ---
 
-### ▶️ Ejecución de las pruebas
+## ▶️ Ejecución de las pruebas
 
 ```bash
 python calculadora.py 14 5
