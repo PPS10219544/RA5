@@ -36,6 +36,24 @@ Este `playbook.yml` realiza:
 ```bash
 ansible-playbook -i provision/hosts.ini provision/playbook.yml
 ```
+
+📂 [playbook.yml](playbook.yml) 
+
+```yaml
+- hosts: all
+  become: true
+  tasks:
+    - name: Actualizar el sistema
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Instalar Apache
+      apt:
+        name: apache2
+        state: present
+```
+
 ---
 
 ## 📝 Paso 3: Añadir index.html y verificar con curl (index.yml)
@@ -45,5 +63,41 @@ Este `playbook.yml` realiza:
  - Reinicia el servicio Apache.
  - Verifica la respuesta con `curl`.
 
+📂 [index.yml](index.yml) 
 
+```yaml
+- hosts: all
+  become: true
+  tasks:
+    - name: Crear index.html con contenido personalizado
+      copy:
+        dest: /var/www/html/index.html
+        content: "Ansible rocks"
 
+    - name: Reiniciar Apache
+      service:
+        name: apache2
+        state: restarted
+
+    - name: Verificar contenido con curl
+      shell: curl -s http://localhost
+      register: curl_output
+
+    - name: Mostrar resultado curl
+      debug:
+        msg: "{{ curl_output.stdout }}"
+```
+
+---
+
+## 🧹 Limpieza
+
+Para destruir la máquina virtual y liberar recursos: 
+
+```bash
+vagrant destroy -f
+```
+
+## 📚 Recursos
+- [Documentación de Vagrant](https://developer.hashicorp.com/vagrant)
+- [Documentación de Ansible](https://docs.ansible.com/)
