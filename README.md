@@ -6,7 +6,7 @@ automatización de la construcción de sus elementos.
 
 Incluye los siguientes apartados:
 * [RA5_1](/RA5_1): Jenkins.
-* [RA5_2](/RA5_2): Terraform & Ansible.
+* [RA5_2](/RA5_2): Vagrant & Ansible.
 
 ```
 .
