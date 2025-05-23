@@ -101,3 +101,5 @@ vagrant destroy -f
 ## 📚 Recursos
 - [Documentación de Vagrant](https://developer.hashicorp.com/vagrant)
 - [Documentación de Ansible](https://docs.ansible.com/)
+- [Creación de entornos de integración con Ansible y Vagrant]([https://docs.ansible.com/](https://adictosaltrabajo.com/2015/09/04/creacion-de-entornos-de-integracion-con-ansible-y-vagrant/))
+- [Vagrant + Ansible]([https://docs.ansible.com/](https://www.rootdesdezero.com/vagrantansible/))
