@@ -16,7 +16,27 @@ Antes de comenzar, nos aseguramos de tener instaladas las siguientes herramienta
 
 ## 🔧 Paso 1: Provisionar Ubuntu 24.04 con Vagrant
 
-El archivo `Vagrantfile` define la creación de una máquina virtual con Ubuntu 24.04.
+El archivo [Vagrantfile](Vagrantfile) define la creación de una máquina virtual con Ubuntu 24.04.
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.hostname = "ansiblevm"
+  config.vm.network "private_network", ip: "192.168.56.10"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1024"
+    vb.cpus = 1
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update -y
+    apt-get install -y python python-apt curl apache2
+  SHELL
+end
+```
+
+---
 
 ### ✅ Instrucciones
 
