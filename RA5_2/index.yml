@@ -1,0 +1,20 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Crear index.html con contenido personalizado
+      copy:
+        dest: /var/www/html/index.html
+        content: "Ansible rocks"
+
+    - name: Reiniciar Apache
+      service:
+        name: apache2
+        state: restarted
+
+    - name: Verificar contenido con curl
+      shell: curl -s http://localhost
+      register: curl_output
+
+    - name: Mostrar resultado curl
+      debug:
+        msg: "{{ curl_output.stdout }}"
