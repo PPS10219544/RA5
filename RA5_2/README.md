@@ -42,7 +42,7 @@ end
 vagrant up
 ```
 
-[vagrant up](assets/vagrantup.png) 
+![vagrant up](assets/vagrantup.png) 
 
 ---
 
