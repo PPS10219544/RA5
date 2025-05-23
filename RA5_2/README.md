@@ -44,6 +44,14 @@ vagrant up
 
 ![vagrant up](assets/vagrantup.png) 
 
+Comprobación de la conectividad.
+
+```bash
+vagrant ssh
+```
+
+![vagrant ssh](assets/vagrantssh.png) 
+
 ---
 
 ## ⚙️ Paso 2: Configurar la VM con Ansible (playbook.yml)
