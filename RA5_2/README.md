@@ -124,4 +124,4 @@ vagrant destroy -f
 - [Documentación de Ansible](https://docs.ansible.com/)
 - [Creación de entornos de integración con Ansible y Vagrant](https://adictosaltrabajo.com/2015/09/04/creacion-de-entornos-de-integracion-con-ansible-y-vagrant/)
 - [Vagrant + Ansible](https://www.rootdesdezero.com/vagrantansible/)
-- [Vagrant - Ubuntu Server 24.04](https://portal.cloud.hashicorp.com/vagrant/discover/gusztavvargadr/ubuntu-server)
+- [Vagrant Cloud - Ubuntu Server 24.04](https://portal.cloud.hashicorp.com/vagrant/discover/gusztavvargadr/ubuntu-server)
