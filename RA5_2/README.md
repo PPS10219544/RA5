@@ -41,6 +41,9 @@ end
 ```bash
 vagrant up
 ```
+
+[vagrant up](assets/vagrantup.png) 
+
 ---
 
 ## ⚙️ Paso 2: Configurar la VM con Ansible (playbook.yml)
