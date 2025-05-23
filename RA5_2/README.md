@@ -6,7 +6,7 @@ Este repositorio demuestra cómo implementar **Infrastructure as Code (IaC)** pa
 
 ## 📦 Requisitos
 
-Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
+Antes de comenzar, nos aseguramos de tener instaladas las siguientes herramientas:
 
 - [VirtualBox](https://www.virtualbox.org/)
 - [Vagrant](https://www.vagrantup.com/)
