@@ -107,8 +107,8 @@ A continuación se presentan las capturas que demuestran la correcta instalació
 
 En esta captura se muestra la interfaz web de Prometheus (`http://192.168.1.135:9090/targets`), donde se confirman dos cosas:
 
-- El servicio de `node_exporter` está siendo scrapeado correctamente (`localhost:9100`)
-- El propio Prometheus también aparece como target (`localhost:9090`)
+- El servicio de `node_exporter` está siendo scrapeado correctamente (`192.168.1.135:9100`).
+- El propio Prometheus también aparece como target (`192.168.1.135:9090`).
 - Ambos se encuentran en estado `UP`, lo que confirma una recogida de métricas exitosa.
 
 ![AmbosTargetsUp](assets/AmbosTargetsUp.png) 
@@ -173,7 +173,7 @@ http://192.168.1.135:9090/
 - Hacer click en `New` > `Import`.
 - Importar el dashboard: `1860` (Node Exporter).
 - Seleccionar el **Prometheus importado** anteriormente.
-- Hacer click en **Import**
+- Hacer click en **Import**.
 
 ![DashboardNodeExporter+Prometheus](assets/DashboardNodeExporter+Prometheus.png) 
 
