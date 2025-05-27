@@ -1,4 +1,4 @@
-# RA5_3_2 — Stack de Monitorización Distribuido con Prometheus, Node Exporter y Grafana
+# RA5_3_2 - Stack de Monitorización Distribuido con Prometheus, Node Exporter y Grafana
 
 Este documento describe la implementación de un sistema de monitorización distribuido en una arquitectura cliente-servidor. Se utiliza Prometheus y Node Exporter en el servidor, y Grafana en el cliente para la recolección remota de métricas y su visualización gráfica.
 
