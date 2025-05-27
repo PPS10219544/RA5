@@ -146,9 +146,9 @@ systemctl status grafana-server
 
 ### Paso 3: Acceder a Grafana
 
-En nuestro caso accedemos a la interfaz web: `http://192.168.1.135:3000` 
-Usuario: **admin** 
-Contraseña: **admin** (pide cambiarla en el primer inicio) 
+- En nuestro caso accedemos a la interfaz web: `http://192.168.1.135:3000` 
+- Usuario: **admin**  
+- Contraseña: **admin** (pide cambiarla en el primer inicio) 
 
 ---
 
