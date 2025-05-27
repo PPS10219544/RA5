@@ -6,10 +6,12 @@ Este repositorio contiene el paso a paso para la implementación de un sistema d
 
 ## 🔧 1. Instalación de Node Exporter y Prometheus en el Servidor
 
+
 ### Paso 1: Crear usuario Prometheus
 ```bash
 sudo useradd --no-create-home --shell /bin/false prometheus
 ```
+
 
 ### Paso 2: Descargar Prometheus
 ```bash
@@ -18,6 +20,7 @@ tar -xvzf prometheus-2.52.0.linux-amd64.tar.gz
 cd prometheus-2.52.0.linux-amd64
 ```
 
+
 ### Paso 3: Mover binarios y asignación de permisos
 ```bash
 sudo mv prometheus promtool /usr/local/bin/
@@ -25,6 +28,7 @@ sudo mkdir /etc/prometheus /var/lib/prometheus
 sudo chown -R prometheus:prometheus /etc/prometheus /var/lib/prometheus
 sudo cp -r consoles/ console_libraries/ prometheus.yml /etc/prometheus/
 ```
+
 
 ### Paso 4: Crear servicio systemd para Prometheus 
 
@@ -49,6 +53,7 @@ ExecStart=/usr/local/bin/prometheus \
 WantedBy=default.target
 ```
 
+
 ### Paso 5: Inicializar servicio Prometheus
 ```bash
 sudo systemctl daemon-reload
@@ -59,6 +64,7 @@ sudo systemctl status prometheus
 
 ![EstadoPrometheus](assets/EstadoPrometheus.png) 
 
+
 ### Paso 6: Instalar Node Exporter
 ```bash
 wget https://github.com/prometheus/node_exporter/releases/download/v1.9.1/node_exporter-1.9.1.linux-amd64.tar.gz
@@ -66,6 +72,7 @@ tar -xvzf node_exporter-1.9.1.linux-amd64.tar.gz
 cd node_exporter-1.9.1.linux-amd64
 sudo mv node_exporter /usr/local/bin/
 ```
+
 
 ### Paso 7: Crear servicio systemd para Node Exporter 
 
@@ -154,6 +161,7 @@ systemctl status grafana-server
 
 ## 📈 3. Configuración del Dashboard
 
+
 ### Paso 1: Añadir Prometheus
 
 - Ir a `Connections` > `Data sources`.
@@ -166,6 +174,7 @@ http://192.168.1.135:9090/
 - Hacer click en **Save & Test**
 
 ![GrafanaConPromotheus](assets/GrafanaConPromotheus.png) 
+
 
 ### Paso 2: Importar el dashboard Node Exporter 
 
