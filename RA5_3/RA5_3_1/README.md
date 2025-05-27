@@ -2,15 +2,6 @@
 
 Este repositorio contiene el paso a paso para la implementación de un sistema de monitorización usando **Prometheus**, **Node Exporter** y **Grafana**, validando su instalación y configuración para el seguimiento de un servidor remoto.
 
-## 📌 Requisitos Previos
-
-- Dos máquinas con Ubuntu:
-  - **Servidor Ubuntu Server**: Instalar `prometheus` y `node_exporter`
-  - **Cliente Ubuntu 24.10**: Instalar `grafana` y configurar el dashboard
-
-- Acceso root o privilegios sudo en ambas máquinas
-- Conectividad entre cliente y servidor
-
 ---
 
 ## 🔧 1. Instalación de Node Exporter y Prometheus en el Servidor
