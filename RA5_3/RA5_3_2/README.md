@@ -91,5 +91,5 @@ http://192.168.1.135:9090/
 
 ## ✅ Conclusión
 
-Con este procedimiento se ha conseguido visualizar remotamente las métricas del servidor desde un cliente mediante Grafana, cumpliendo los objetivos de la actividad 3.2: monitorización distribuida, conexión remota segura y explotación gráfica de datos en tiempo real.
+Con este procedimiento se ha conseguido visualizar remotamente las métricas del servidor desde un cliente mediante Grafana, cumpliendo los objetivos de la monitorización distribuida, conexión remota segura y explotación gráfica de datos en tiempo real.
 
