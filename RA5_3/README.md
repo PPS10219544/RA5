@@ -47,3 +47,4 @@ Despliegue del sistema de monitorización distribuido:
 - [Guía paso a paso en Medium](https://medium.com/@dineshmurali/introduction-to-monitoring-with-prometheus-grafana-ea338d93b2d9)
 - [Prometheus Documentation](https://prometheus.io/)
 - [Grafana Documentation](https://grafana.com/docs/)
+- [Ubuntu Server 24.04 LTS](https://ubuntu.com/download/server/thank-you?version=24.04.2&architecture=amd64&lts=true)
