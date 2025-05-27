@@ -124,7 +124,7 @@ La segunda evidencia muestra la pestaña **Graph** de Prometheus con la métrica
 --- 
 
 
-## 🧭 2. Instalación de Grafana en el Cliente
+## 🧭 2. Instalación de Grafana
 
 ### Paso 1: Añadir repositorio
 ```bash
