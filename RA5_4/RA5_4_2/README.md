@@ -42,8 +42,10 @@ Obtenemos su IP para conectarlo desde otros nodos:
 ```bash
 ip a | grep inet
 ```
-
----
+> La IP obtenida es la **192.168.1.136**
+ 
+ 
+--- 
 
 ## Paso 3: Añadir más nodos al plano de control (Ubuntu Server 2 y 3)
 
