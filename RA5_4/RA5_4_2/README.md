@@ -6,8 +6,8 @@ Instalar un clúster K3s en alta disponibilidad (HA) usando `etcd` embebido, des
 
 ---
 
-## Escenario recomendado
-- 3 nodos (máquinas virtuales o físicas) con Ubuntu 20.04+
+## 🧩 Escenario recomendado
+- 3 nodos (máquinas virtuales o físicas) con Ubuntu 20.04 o superior.
 - Red común entre ellos
 - Acceso SSH o físico con permisos sudo
 
@@ -22,7 +22,7 @@ sudo apt update && sudo apt upgrade -y
 
 ---
 
-## Paso 2: Instalar el nodo inicial (server 1)
+## Paso 2: Instalar el nodo inicial (Ubuntu Desktop 22.04)
 
 ### En el primer nodo:
 ```bash
@@ -31,19 +31,21 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--cluster-init" sh -
 
 > Este nodo inicia el clúster con etcd embebido.
 
-Obtén el token:
+Obtenemos el token:
 ```bash
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
+ 
+![NodeToken](./assets/NodeToken.png)
 
-Obtén su IP para conectarlo desde otros nodos:
+Obtenemos su IP para conectarlo desde otros nodos:
 ```bash
 ip a | grep inet
 ```
 
 ---
 
-## Paso 3: Añadir más nodos al plano de control (server 2 y 3)
+## Paso 3: Añadir más nodos al plano de control (Ubuntu Server 2 y 3)
 
 ### En los demás nodos:
 ```bash
