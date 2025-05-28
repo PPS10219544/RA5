@@ -34,7 +34,7 @@ Despliegue del sistema de monitorización distribuido:
 
 ## 🧩 Máquinas y Herramientas Utilizadas
 
-- **Ubuntu Server / Ubuntu Desktop 24.10**
+- **Ubuntu Server y Ubuntu Desktop 22.04**
 - **Prometheus** — Recolección y almacenamiento de métricas.
 - **Node Exporter** — Exportador de métricas del sistema.
 - **Grafana** — Plataforma de visualización de datos.
