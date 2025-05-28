@@ -47,29 +47,19 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 sudo kubectl get nodes
 ```
 
-![Getnodes](./assets/Getnodes.png)
+![Getnodes](./assets/Getnodes.png) 
 
----
+--- 
 
 ## Paso 4: Posible error AppArmor (CreateContainerError)
 
-Si los pods de nginx entran en estado `CreateContainerError` y los logs muestran:
+El sistema puede tener un problema con el sistema de seguridad **AppArmor**, que impide iniciar los contenedores porque no puede parsear correctamente un archivo de perfil.
 
-```
-AppArmor parser error ... unexpected character (0x0)
-```
+Esto se debe a cómo `containerd` (el runtime de contenedores usado por K3s) interactúa con AppArmor.
 
-### 🔧 Solución paso a paso:
+### 🔧 Solución paso a paso: 
 
-#### 1. Desactivar AppArmor (sólo en entorno de laboratorio):
-```bash
-sudo systemctl stop apparmor
-sudo systemctl disable apparmor
-sudo apt purge apparmor -y
-sudo reboot
-```
-
-#### 2. Alternativa (más limpia): configurar K3s para ignorar AppArmor
+#### 1. Configurar K3s para ignorar AppArmor
 ```bash
 sudo systemctl edit k3s
 ```
@@ -83,24 +73,35 @@ Luego:
 sudo systemctl daemon-reexec
 sudo systemctl restart k3s
 ```
+ 
+#### 2. (Si la solución anterior no funcionó) Desactivar AppArmor: 
+```bash
+sudo systemctl stop apparmor
+sudo systemctl disable apparmor
+sudo apt purge apparmor -y
+sudo reboot
+```
 
-#### 3. Eliminar y volver a crear el despliegue:
+#### 3. Eliminar y volver a crear el despliegue: 
 ```bash
 kubectl delete deploy nginx
 kubectl create deployment nginx --image=nginx
 kubectl scale deployment nginx --replicas=2
 ```
 
+--- 
+
+ 
 ## Paso 5: Desplegar servicio NGINX con 2 réplicas
 
 ```bash
-kubectl create deployment nginx --image=nginx
-kubectl scale deployment nginx --replicas=2
+sudo kubectl create deployment nginx --image=nginx
+sudo kubectl scale deployment nginx --replicas=2
 ```
 
-### Exponer servicio (opcional):
+### Es recomendable exponer el servicio:
 ```bash
-kubectl expose deployment nginx --port=80 --type=NodePort
+sudo kubectl expose deployment nginx --port=80 --type=NodePort
 ```
 
 ### Verificar:
@@ -132,37 +133,26 @@ source ~/.config/envman/PATH.env
 k9s
 ```
 
-### En K9s puedes:
+Donde podras:
 - Navegar por los pods
 - Ver logs
 - Monitorizar el estado del clúster
 
+
+![5_4_1-k9s](./assets/5_4_1-k9s.png) 
+
+ 
 ---
 
-
-
-
-![5_4_1-k9s](./assets/5_4_1-k9s.png)
-
-
----
-
-
----
-
-## Conclusión
+## ✅ Conclusión
 
 La instalación de K3s en modo single-node permite desplegar entornos de Kubernetes ligeros y funcionales de forma sencilla. El despliegue de un servicio como NGINX con múltiples réplicas y su monitorización con K9s demuestra la eficiencia de esta arquitectura para pruebas, desarrollo o incluso producción en entornos de bajo consumo. La resolución de errores comunes como los conflictos con AppArmor forma parte esencial del aprendizaje práctico.
 
 ---
 
-## Recursos
+## 📚 Recursos
 
 - [Documentación oficial de K3s](https://k3s.io/)
 - [K9s CLI](https://k9scli.io/)
 - [Kubernetes - kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
 - [Artículo sobre AppArmor y contenedores](https://wiki.ubuntu.com/AppArmor)
-
----
-
-✅ **Fin de la Actividad 5.1**
