@@ -7,9 +7,16 @@ Instalar un clúster K3s en alta disponibilidad (HA) usando `etcd` embebido, des
 ---
 
 ## 🧩 Escenario recomendado
-- 3 nodos (máquinas virtuales o físicas) con Ubuntu 20.04 o superior.
-- Red común entre ellos
-- Acceso SSH o físico con permisos sudo
+
+Se requiere un entorno con las siguientes características:
+
+- 3 nodos (máquinas virtuales o físicas) con **Ubuntu 20.04 o superior**:
+  - 🖥️ **Nodo 1** (Ubuntu Desktop 22.04): `192.168.1.136`
+  - 🖥️ **Nodo 2** (Ubuntu Server): `192.168.1.137`
+  - 🖥️ **Nodo 3** (Ubuntu Server): `192.168.1.138`
+- Todos los nodos deben estar en la **misma red**.
+- Acceso vía **SSH** o terminal local con permisos `sudo`.
+- ⚠️ Cada nodo debe tener un **hostname único** configurado correctamente para evitar conflictos en el clúster.
 
 ---
 
@@ -101,7 +108,7 @@ sudo kubectl get svc
 
 ---
 
-## Paso 6: Instalar y usar K9s
+## Paso 6: Instalar y usar K9s (Nodo principal)
 
 ### Configuramos `kubectl` para ejecutar con los permisos adecuados:
 ```bash
