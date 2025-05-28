@@ -46,14 +46,14 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--cluster-init" sh -
 
 > Este nodo inicia el clúster con etcd embebido.
 
-Obtenemos el token:
+Obtener el token:
 ```bash
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
  
 ![NodeToken](./assets/NodeToken.png)
 
-Obtenemos su IP para conectarlo desde otros nodos:
+Obtener su IP para conectarlo desde otros nodos:
 ```bash
 ip a | grep inet
 ```
@@ -110,14 +110,14 @@ sudo kubectl get svc
 
 ## Paso 6: Instalar y usar K9s (Nodo principal)
 
-### Configuramos `kubectl` para ejecutar con los permisos adecuados:
+### Configurar `kubectl` para ejecutar con los permisos adecuados:
 ```bash
 mkdir -p $HOME/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-
+### Instalar K9s y su ejecución:
 ```bash
 curl -sS https://webinstall.dev/k9s | bash
 source ~/.config/envman/PATH.env
