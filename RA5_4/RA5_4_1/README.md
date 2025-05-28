@@ -82,13 +82,7 @@ sudo apt purge apparmor -y
 sudo reboot
 ```
 
-#### 3. Eliminar y volver a crear el despliegue: 
-```bash
-kubectl delete deploy nginx
-kubectl create deployment nginx --image=nginx
-kubectl scale deployment nginx --replicas=2
-```
-
+ 
 --- 
 
  
