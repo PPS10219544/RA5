@@ -32,7 +32,7 @@ RA5/
 
 ---
 
-## 📜 Jenkinsfile (RA5\_1\_2/Jenkinsfile)
+## 📜 [Jenkinsfile](./Jenkinsfile)
 
 ```groovy
 pipeline {
