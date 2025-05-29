@@ -87,6 +87,7 @@ sudo init 6
 
 > 🔁 Reinicia la sesión para aplicar el grupo docker.
 
+ 
 ### 📦 PASO 2: Crear volumen para Jenkins
 
 ```bash
