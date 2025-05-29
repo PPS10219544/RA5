@@ -28,35 +28,7 @@ RA5/
 
 ### 📌 Código en [`calculadora.py`](../RA5_1_1/calculadora.py)
 
-```python
-def multiplicar(a, b):
-    return a * b
-
-if __name__ == '__main__':
-    import sys
-    if len(sys.argv) != 3:
-        print("Uso: python calculadora.py <num1> <num2>")
-        sys.exit(1)
-    num1 = float(sys.argv[1])
-    num2 = float(sys.argv[2])
-    print(multiplicar(num1, num2))
-```
-
 ### 📌 Código en [`test_calculator.py`](../RA5_1_1/test_calculator.py)
-
-```python
-import unittest
-from calculadora import multiplicar
-
-class TestCalculadora(unittest.TestCase):
-    def test_multiplicacion(self):
-        self.assertEqual(multiplicar(2, 3), 6)
-        self.assertEqual(multiplicar(-1, 5), -5)
-        self.assertEqual(multiplicar(0, 10), 0)
-
-if __name__ == '__main__':
-    unittest.main()
-```
 
 ---
 
