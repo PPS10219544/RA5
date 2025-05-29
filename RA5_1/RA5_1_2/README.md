@@ -2,15 +2,16 @@
 
 ## 🎯 Objetivo
 
-El objetivo de esta tarea es poner en práctica el enfoque de Integración Continua (CI) mediante la automatización del proceso de pruebas de un proyecto en Python utilizando Jenkins. Para ello, se implementará una pipeline declarativa descrita en un archivo Jenkinsfile, que será gestionada desde el propio repositorio Git del proyecto. 
- 
+El objetivo de esta tarea es poner en práctica el enfoque de **Integración Continua (CI)** mediante la automatización del proceso de pruebas de un proyecto en Python utilizando Jenkins. Para ello, se implementará una **pipeline declarativa** descrita en un archivo `Jenkinsfile`, que será gestionada desde el propio repositorio Git del proyecto.
+
 La canalización debe ejecutarse de forma automática cada vez que se realicen cambios (commits) en el código, permitiendo:
-- Detectar errores de manera temprana.
-- Asegurar que las pruebas unitarias se ejecuten correctamente.
-- Verificar la estabilidad del proyecto tras cada actualización.
- 
-De este modo, se afianza el principio de "Pipeline as Code", donde toda la lógica de construcción y prueba del software es mantenida de forma versionada, transparente y reproducible. 
- 
+
+* Detectar errores de manera temprana.
+* Asegurar que las pruebas unitarias se ejecuten correctamente.
+* Verificar la estabilidad del proyecto tras cada actualización.
+
+De este modo, se afianza el principio de **"Pipeline as Code"**, donde toda la lógica de construcción y prueba del software es mantenida de forma versionada, transparente y reproducible.
+
 --- 
  
 ## 🛠️ Preparativos
@@ -66,21 +67,6 @@ pipeline {
     }
 }
 ```
-
----
-# 🧪 Tarea 2 - Jenkins CI Pipeline para Calculadora Python
-
-## 🎯 Objetivo
-
-El objetivo de esta tarea es poner en práctica el enfoque de **Integración Continua (CI)** mediante la automatización del proceso de pruebas de un proyecto en Python utilizando Jenkins. Para ello, se implementará una **pipeline declarativa** descrita en un archivo `Jenkinsfile`, que será gestionada desde el propio repositorio Git del proyecto.
-
-La canalización debe ejecutarse de forma automática cada vez que se realicen cambios (commits) en el código, permitiendo:
-
-* Detectar errores de manera temprana.
-* Asegurar que las pruebas unitarias se ejecuten correctamente.
-* Verificar la estabilidad del proyecto tras cada actualización.
-
-De este modo, se afianza el principio de **"Pipeline as Code"**, donde toda la lógica de construcción y prueba del software es mantenida de forma versionada, transparente y reproducible.
 
 ---
 
