@@ -115,7 +115,7 @@ Actualizamos e instalamos lo necesario para el correcto uso:
 sudo apt update
 sudo apt install docker.io
 sudo apt install docker
-sudo apt install docker-compose
+sudo apt install docker-compose -y
 ```
 
 ---
@@ -127,36 +127,47 @@ sudo apt install docker-compose
 sudo docker build -t friendlyhello .
 ```
 
+![DockerBuild](./assets/DockerBuild.png) 
+
+
 ### Ejecución directa para pruebas:
 ```bash
 sudo docker run --rm -p 4000:80 friendlyhello
 ```
+
+![DockerRun](./assets/DockerRun.png) 
+
 > Visita en el navegador: `http://192.168.1.136:4000`
+ 
+![WebInicial](./assets/WebInicial.png) 
 
 ---
 
 ## 📦 Paso 3: Despliegue con `docker-compose`
-
-Instalamos `docker-compose` si no está disponible:
-```bash
-sudo apt update
-sudo apt install docker-compose -y
-```
 
 ### Ejecutamos el despliegue con balanceo:
 ```bash
 sudo docker-compose up -d --scale web=5
 ```
 
+![Docker-Compose](./assets/Docker-Compose.png) 
+
 ---
 
 ## 🔍 Paso 4: Validar funcionamiento
 
 ### Navegador:
-- Accedemos a la aplicación: `http://192.168.1.136:4000`
-- Dashboard de Traefik: `http://192.168.1.136:8080/dashboard/#/`
+- Accedemos a la aplicación: `http://192.168.1.136:4000` 
+ 
+![RedisWeb](./assets/RedisWeb.png) 
 
 > ✅ Si aparece el mensaje de "Hello World!" y el hostname cambia al recargar, ¡el balanceo funciona!
+
+
+- Dashboard de Traefik: `http://192.168.1.136:8080/dashboard/#/`
+
+![Traefik](./assets/Traefik.png) 
+
 
 ---
 
