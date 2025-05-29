@@ -38,6 +38,10 @@ RA5/
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     stages {
         stage('Preparar entorno') {
             steps {
@@ -54,10 +58,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ La pipeline se ha ejecutado correctamente.'
+            echo 'La pipeline se ha ejecutado correctamente.'
         }
         failure {
-            echo '❌ La pipeline ha fallado. Debes revisar los errores encontrados.'
+            echo 'La pipeline ha fallado. Debes revisar los errores encontrados.'
         }
     }
 }
