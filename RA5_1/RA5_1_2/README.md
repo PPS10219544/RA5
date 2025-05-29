@@ -68,15 +68,78 @@ pipeline {
 ```
 
 ---
+# 🧪 Tarea 2 - Jenkins CI Pipeline para Calculadora Python
 
-## 🚀 Cómo crear la pipeline en Jenkins
+## 🎯 Objetivo
 
-### 1. Crea una nueva tarea (New Item)
+El objetivo de esta tarea es poner en práctica el enfoque de **Integración Continua (CI)** mediante la automatización del proceso de pruebas de un proyecto en Python utilizando Jenkins. Para ello, se implementará una **pipeline declarativa** descrita en un archivo `Jenkinsfile`, que será gestionada desde el propio repositorio Git del proyecto.
 
-* Nombre: `calculadora-ci`
-* Tipo: **Pipeline**
+La canalización debe ejecutarse de forma automática cada vez que se realicen cambios (commits) en el código, permitiendo:
 
-### 2. Configura la pipeline con Git
+* Detectar errores de manera temprana.
+* Asegurar que las pruebas unitarias se ejecuten correctamente.
+* Verificar la estabilidad del proyecto tras cada actualización.
+
+De este modo, se afianza el principio de **"Pipeline as Code"**, donde toda la lógica de construcción y prueba del software es mantenida de forma versionada, transparente y reproducible.
+
+---
+
+## 🚀 PASO A PASO: MONTAR Y EJECUTAR JENKINS CON TU PIPELINE
+
+### 🔧 PASO 1: Instalar Docker (si no lo tienes)
+
+Si ya tienes Docker instalado, sáltate este paso. Si no:
+
+```bash
+sudo apt update
+sudo apt install docker docker.io docker-compose -y
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+sudo init 6
+```
+
+> 🔁 Reinicia la sesión para aplicar el grupo docker.
+
+### 📦 PASO 2: Crear volumen para Jenkins
+
+```bash
+mkdir $HOME/jenkins_home
+sudo chown 1000:1000 $HOME/jenkins_home
+```
+
+Esto evita problemas de permisos dentro del contenedor.
+
+### 🐳 PASO 3: Lanzar Jenkins con Docker
+
+```bash
+sudo docker run -d -p 49001:8080 -v $HOME/jenkins_home:/var/jenkins_home --name jenkins jenkins/jenkins:lts-jdk11
+```
+
+> Accede desde tu navegador: `http://192.168.1.109:49001`
+
+![JenkinsPass](./assets/JenkinsPass.png) 
+
+### 🔑 PASO 4: Obtener la contraseña inicial
+
+```bash
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+Pega esa contraseña en el navegador para desbloquear Jenkins.
+
+### 📦 PASO 5: Instala plugins sugeridos
+
+Durante la instalación, elige **“Instalar plugins sugeridos”** y luego crea tu usuario admin.
+
+### ➕ PASO 6: Crear un nuevo pipeline
+
+Haz clic en “Nuevo Item”.
+
+* Ponle nombre (por ejemplo: `calculadora-ci`).
+* Selecciona “Pipeline” y haz clic en OK.
+
+### 🔁 PASO 7: Configurar la pipeline con Git
 
 * **Definition**: `Pipeline script from SCM`
 * **SCM**: Git
@@ -84,11 +147,9 @@ pipeline {
 * **Branch Specifier**: `*/main`
 * **Script Path**: `RA5_1_2/Jenkinsfile`
 
-### 3. Guarda y haz clic en **“Build Now”** para ejecutarla
+Haz click en "Guardar".
 
----
-
-## 🐍 Instalar Python en Jenkins (si es necesario)
+### 🐍 PASO 8: Instalar Python en Jenkins (si es necesario) 
 
 Si el contenedor Jenkins no tiene `python3`, entra como root:
 
@@ -99,32 +160,32 @@ apt install -y python3 python3-pip
 exit
 ```
 
----
+### ▶️ PASO 9: Ejecutar la pipeline
 
-## 🧪 Resultado esperado
+Haz clic en "Build Now" para lanzar la ejecución.
 
-* Al ejecutar correctamente, los tests se mostrarán como pasados en la consola.
-* Si algo falla (como un test incorrecto), Jenkins marcará el pipeline como fallido.
+- Jenkins clona el repositorio.
+- Lee y ejecuta el Jenkinsfile.
+- Muestra resultado en etapas (verde = éxito, rojo = fallo).
+ 
+![PipelineOK](./assets/PipelineOK.png) 
 
-### 📸 Ejemplo visual:
+![PipelineOK2](./assets/PipelineOK2.png) 
 
-✅ Ejecución correcta:
 
-```
-Ran 3 tests in 0.001s
+### 💥 PASO 10: Probar con error
 
-OK
-```
+Edita `test_calculator.py` con un test fallido:
 
-❌ Ejecución fallida:
-
-```
-AttributeError: module 'test_calculator' has no attribute 'py'
+```python
+self.assertEqual(multiplicar(2, 3), 999)
 ```
 
-(Solucionado eliminando `.py` del comando en Jenkinsfile).
+Vuelve a ejecutar la pipeline, mostrando el error.
 
----
+![PipelineError](./assets/PipelineError.png)
+ 
+--- 
 
 ## ✅ Conclusión
 
