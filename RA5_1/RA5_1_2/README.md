@@ -26,7 +26,7 @@ RA5/
 │   └── Jenkinsfile
 ```
 
-### 📌 Código en `calculadora.py`
+### 📌 Código en [`calculadora.py`](../RA5_1_1/calculadora.py)
 
 ```python
 def multiplicar(a, b):
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print(multiplicar(num1, num2))
 ```
 
-### 📌 Código en `test_calculator.py`
+### 📌 Código en [`test_calculator.py`](../RA5_1_1/test_calculator.py)
 
 ```python
 import unittest
