@@ -141,6 +141,10 @@ Si el contenedor Jenkins no tiene `python3`, entra como root:
 
 ```bash
 sudo docker exec -u 0 -it jenkins bash
+```
+
+Actualiza e instala Python dentro de este contenedor:
+```bash
 apt update
 apt install -y python3 python3-pip
 exit
