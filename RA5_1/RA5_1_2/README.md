@@ -70,7 +70,7 @@ pipeline {
 
 ---
 
-## 🚀 PASO A PASO: MONTAR Y EJECUTAR JENKINS CON TU PIPELINE
+## 🚀 Montar y Ejecutar Jenkins con tu pipeline
 
 ### 🔧 PASO 1: Instalar Docker (si no lo tienes)
 
