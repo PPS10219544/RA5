@@ -26,9 +26,9 @@ RA5/
 │   └── Jenkinsfile
 ```
 
-### 📌 Código en [`calculadora.py`](../RA5_1_1/calculadora.py)
+### 📌 Código de [`calculadora.py`](../RA5_1_1/calculadora.py)
 
-### 📌 Código en [`test_calculator.py`](../RA5_1_1/test_calculator.py)
+### 📌 Código de [`test_calculator.py`](../RA5_1_1/test_calculator.py)
 
 ---
 
