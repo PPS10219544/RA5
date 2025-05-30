@@ -168,7 +168,8 @@ Haz clic en "Build Now" para lanzar la ejecución.
 Edita `test_calculator.py` con un test fallido:
 
 ```python
-self.assertEqual(multiplicar(2, 3), 999)
+def test_multiplicar_enteros(self):
+    self.assertEqual(self.calc.multiplicar(2, 3), 999)
 ```
 
 Vuelve a ejecutar la pipeline, mostrando el error.
