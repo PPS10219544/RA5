@@ -1,10 +1,33 @@
-# 🧩 RA5_1_3 - Pipeline con Docker y Docker Compose
+# 🧩 RA5_1_3 - Jenkinsfile con Docker y Docker Compose
 
 ## 🎯 Objetivo
 
-Esta tarea tiene como objetivo construir y ejecutar una **pipeline de CI/CD en Jenkins utilizando Docker**. Se trabajará con un archivo `jenkinsfile.docker` para definir una serie de etapas (stages) que ejecutarán las pruebas del proyecto de Python en contenedores Docker. Además, se creará y usará un archivo `docker-compose.yml` como parte de la integración del flujo.
+En esta tarea se construye una pipeline de Integración Continua (CI) más avanzada que integra:
+
+* Contenedores Docker
+* Imágenes personalizadas
+* Docker Compose
+
+El objetivo es automatizar el ciclo completo de pruebas del proyecto Python (la calculadora) **dentro de contenedores Docker**, permitiendo mayor portabilidad y aislamiento. Todo el flujo está definido mediante un `jenkinsfile.docker`.
 
 ---
+
+## 📁 Estructura del repositorio esperada
+
+```
+RA5_1/
+├── RA5_1_1/
+│   ├── calculadora.py
+│   └── test_calculator.py
+├── RA5_1_2/
+│   └── Jenkinsfile
+├── RA5_1_3/
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   └── jenkinsfile.docker
+```
+
+--- 
 
 ## 🐳 Dockerfile
 
@@ -45,43 +68,31 @@ Archivo de pipeline con todas las etapas:
 
 ```dockerfile
 pipeline {
-    agent {
-        docker {
-            image 'docker:latest'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
-
-    environment {
-        DOCKER_IMAGE = 'calculadora:test'
-    }
+    agent any
 
     stages {
-        stage('Clonar repositorio') {
+
+        stage('Clonar Repositorio') {
             steps {
-                git url: 'https://github.com/PPS10219544/RA5_1.git'
+                echo 'Repositorio clonado correctamente.'
             }
         }
 
-        stage('Construir imagen Docker') {
+        stage('Construir Imagen Docker') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE RA5_1_3'
+                dir('RA5_1_3') {
+                    sh 'docker build -t calculadora_test .'
+                }
             }
         }
 
-        stage('Ejecutar contenedor') {
+        stage('Ejecutar Contenedor') {
             steps {
-                sh 'docker run --rm $DOCKER_IMAGE'
+                sh 'docker run --rm --name contenedor_calculadora calculadora_test'
             }
         }
 
-        stage('Ejecutar tests en Docker') {
-            steps {
-                sh 'docker run --rm $DOCKER_IMAGE python3 -m unittest RA5_1_1/test_calculator.py'
-            }
-        }
-
-        stage('Ejecutar docker-compose') {
+        stage('Ejecutar Docker Compose') {
             steps {
                 dir('RA5_1_3') {
                     sh 'docker-compose up --build --abort-on-container-exit'
@@ -95,29 +106,46 @@ pipeline {
             echo 'Pipeline Docker ejecutada correctamente.'
         }
         failure {
-            echo 'Error en la pipeline Docker.'
+            echo 'Fallo en alguna etapa de Docker Pipeline.'
         }
     }
 }
 ```
 
+---
+
+## 🚀 Crear Pipeline en Jenkins
+
+1. En la interfaz Jenkins, haz clic en **Nuevo Item**.
+2. Nombre: `calculadora-docker-ci`
+3. Tipo: **Pipeline**
+4. En configuración:
+
+   * **Pipeline script from SCM**
+   * **SCM**: Git
+   * **URL**: `https://github.com/PPS10219544/RA5.git`
+   * **Branch**: `*/main`
+   * **Script Path**: `RA5_1/RA5_1_3/jenkinsfile.docker`
+
+---
+
+## 🧪 Validación y Resultados
+
+* La pipeline debe ejecutar sin errores.
+* Se observará la construcción de la imagen, ejecución del contenedor y validación de los test unitarios.
+
+---
+
+## ✅ Conclusión
+
+Con esta tarea se automatiza todo el proceso CI usando Docker y Jenkins. Esta práctica refuerza los conocimientos en:
+
+* Contenedores y pruebas aisladas
+* Automatización completa con Jenkins y pipelines declarativas
+* Uso de Dockerfile y docker-compose en entornos de CI
+ 
 --- 
-
-## ▶️ ¿Cómo ejecutar esta Pipeline?
-1. Asegúrate de que Jenkins tenga acceso a Docker:
-  - Usa una imagen de Jenkins con Docker in Docker.
-  - O comparte el socket Docker -v /var/run/docker.sock:/var/run/docker.sock`.
-
-2. Crea un nuevo proyecto en Jenkins:
-  - Tipo: **Pipeline**
-  - **Pipeline from SCM**
-    - Repository URL: https://github.com/PPS10219544/RA5_1.git
-    - Script Path: `RA5_1_3/jenkinsfile.docker`
-
-3. Guarda y haz clic en “**Build Now**”.
-
---- 
-
+ 
 ## 📚 Recursos
 
 - [Jenkins con Docker](https://www.jenkins.io/doc/book/pipeline/docker/)
