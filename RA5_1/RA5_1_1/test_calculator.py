@@ -14,5 +14,8 @@ class TestCalculadora(unittest.TestCase):
     def test_multiplicar_por_cero(self):
         self.assertEqual(self.calc.multiplicar(0, 100), 0)
 
+    def test_multiplicar_enteros(self):
+    self.assertEqual(self.calc.multiplicar(2, 3), 999)  # Provocamos error
+
 if __name__ == '__main__':
     unittest.main()
